@@ -1,14 +1,9 @@
-import React, { useState, useRef } from 'react';
-import {
-    SafeAreaView,
-    View,
-    StatusBar,
-    TouchableOpacity,
-    Text,
-} from 'react-native';
+import React, { useState, useRef, useEffect } from 'react';
+import { SafeAreaView } from 'react-native';
 import PhoneInput from 'react-native-phone-number-input';
 import { useTheme } from '../../hooks';
 import { ColorScheme } from '../../constants/enums';
+import Button from '../../components/Button';
 
 const PhoneLoginLayout = () => {
     const { colorScheme } = useTheme();
@@ -16,6 +11,19 @@ const PhoneLoginLayout = () => {
     const [valid, setValid] = useState(false);
     const phoneInput = useRef(null);
 
+    const validatePhoneInput = () => {
+        const checkValid = phoneInput.current?.isValidNumber(value);
+        setValid(checkValid ? checkValid : false);
+    };
+
+    const handleOnSend = () => {
+        validatePhoneInput();
+    };
+
+    useEffect(() => {
+        if (valid) {
+        }
+    }, [valid]);
     return (
         <>
             <SafeAreaView>
@@ -24,27 +32,13 @@ const PhoneLoginLayout = () => {
                     defaultValue={value}
                     defaultCode="NO"
                     layout="first"
-                    onChangeText={(text) => {
-                        setValue(text);
-                    }}
-                    onChangeFormattedText={(text) => {
-                        setFormattedValue(text);
-                    }}
+                    onChangeText={setValue}
                     withDarkTheme={ColorScheme.dark === colorScheme}
                     withShadow
                     autoFocus
                 />
-                <TouchableOpacity
-                    onPress={() => {
-                        const checkValid =
-                            phoneInput.current?.isValidNumber(value);
-                        setShowMessage(true);
-                        setValid(checkValid ? checkValid : false);
-                    }}
-                >
-                    <Text>Check</Text>
-                </TouchableOpacity>
             </SafeAreaView>
+            <Button onPress={handleOnSend}>Send</Button>
         </>
     );
 };
