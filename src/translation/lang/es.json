@@ -1,0 +1,39 @@
+{
+    "app": {
+        "root_title": "Aplicación del controlador OSFC",
+        "main_menu": {
+            "title": "Menú",
+            "screen": {
+                "home": "Hogar"
+            }
+        },
+        "error": {
+            "security": {
+                "allowed_app_user_role": "El rol de usuario actual no tiene permitido usar la aplicación"
+            },
+            "warning": "Advertencia",
+            "invalid_phone_number": "Número de teléfono inválido"
+        },
+        "buttons": {
+            "send": "Enviar",
+            "resend": "Reenviar",
+            "logout": "Cerrar sesión"
+        },
+        "phone_login": {
+            "buttons": {
+                "back_to_phone": "Volver a la edición del teléfono"
+            },
+            "fields": {
+                "verification_code": {
+                    "helper_text": {
+                        "countdown_on": "Próximo intento después",
+                        "countdown_off": "Si el código no ha llegado, haga clic en"
+                    }
+                }
+            },
+            "error": {
+                "verification_error": "Error de verificación"
+            }
+        }
+    }
+}

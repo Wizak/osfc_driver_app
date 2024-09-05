@@ -1,0 +1,39 @@
+{
+    "app": {
+        "root_title": "OSFC-stuurprogramma-app",
+        "main_menu": {
+            "title": "Menu",
+            "screen": {
+                "home": "Thuis"
+            }
+        },
+        "error": {
+            "security": {
+                "allowed_app_user_role": "Huidige gebruikersrol mag app niet gebruiken"
+            },
+            "warning": "Waarschuwing",
+            "invalid_phone_number": "Ongeldig telefoonnummer"
+        },
+        "buttons": {
+            "send": "Versturen",
+            "resend": "Opnieuw verzenden",
+            "logout": "Uitloggen"
+        },
+        "phone_login": {
+            "buttons": {
+                "back_to_phone": "Terug naar telefoonbewerking"
+            },
+            "fields": {
+                "verification_code": {
+                    "helper_text": {
+                        "countdown_on": "Volgende poging na",
+                        "countdown_off": "Als de code niet is aangekomen, klikt u op"
+                    }
+                }
+            },
+            "error": {
+                "verification_error": "Verificatiefout"
+            }
+        }
+    }
+}

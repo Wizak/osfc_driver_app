@@ -2,7 +2,7 @@ const csv = require('csv-parser');
 const fs = require('fs');
 const _ = require('lodash');
 
-const DICTIONARY_CSV_PATH = './translations.csv';
+const DICTIONARY_CSV_PATH = './translations/dictionary.csv';
 
 const csvToJson = () => {
     const result = {};

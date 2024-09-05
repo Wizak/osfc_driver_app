@@ -1,0 +1,39 @@
+{
+    "app": {
+        "root_title": "OSFC-Treiber-App",
+        "main_menu": {
+            "title": "Speisekarte",
+            "screen": {
+                "home": "Heim"
+            }
+        },
+        "error": {
+            "security": {
+                "allowed_app_user_role": "Aktuelle Benutzerrolle erlaubt keine Nutzung der App"
+            },
+            "warning": "Warnung",
+            "invalid_phone_number": "Ungültige Telefonnummer"
+        },
+        "buttons": {
+            "send": "Schicken",
+            "resend": "Erneut senden",
+            "logout": "Ausloggen"
+        },
+        "phone_login": {
+            "buttons": {
+                "back_to_phone": "Zurück zur Telefonbearbeitung"
+            },
+            "fields": {
+                "verification_code": {
+                    "helper_text": {
+                        "countdown_on": "Nächster Versuch nach",
+                        "countdown_off": "Wenn der Code nicht angekommen ist, klicken Sie auf"
+                    }
+                }
+            },
+            "error": {
+                "verification_error": "Überprüfungsfehler"
+            }
+        }
+    }
+}

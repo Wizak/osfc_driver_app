@@ -4,6 +4,7 @@ import { Drawer as PaperDrawer } from 'react-native-paper';
 
 import Constants from 'expo-constants';
 import I18n from '../translation';
+import LogoutButton from '../components/LogoutButton';
 
 const MenuDrawerContent = (props) => {
     const [activeScreen, setActiveScreen] = React.useState('Home');

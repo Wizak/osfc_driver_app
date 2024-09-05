@@ -6,8 +6,7 @@ import Logo from '../../components/Logo';
 import Header from '../../components/Header';
 import I18n from '../../translation';
 
-// import { OtpInput } from 'react-native-otp-entry';
-import PhoneLoginLayout from './PhoneLoginLayout';
+import PhoneLoginLayout from './PhoneLogin';
 
 const SignInLayout = () => <PhoneLoginLayout />;
 

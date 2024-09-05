@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { StoreReducer, StoreActions } from './reducers/store';
-import { USER_STORE_KEY } from '../core/consts';
+import { USER_STORE_KEY } from '../constants/constants';
 
 const StoreContext = createContext();
 

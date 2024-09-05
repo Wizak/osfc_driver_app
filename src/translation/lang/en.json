@@ -10,10 +10,30 @@
         "error": {
             "security": {
                 "allowed_app_user_role": "Current user role disallowed to use App"
-            }
+            },
+            "warning": "Warning",
+            "invalid_phone_number": "Invalid phone number"
         },
-        "phone_verification": {
-            "send": "Send"
+        "buttons": {
+            "send": "Send",
+            "resend": "Resend",
+            "logout": "Logout"
+        },
+        "phone_login": {
+            "buttons": {
+                "back_to_phone": "Back to phone editing"
+            },
+            "fields": {
+                "verification_code": {
+                    "helper_text": {
+                        "countdown_on": "Next try after",
+                        "countdown_off": "If the code has not arrived, click"
+                    }
+                }
+            },
+            "error": {
+                "verification_error": "Verification Error"
+            }
         }
     }
 }

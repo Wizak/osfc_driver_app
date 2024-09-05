@@ -1,0 +1,39 @@
+{
+    "app": {
+        "root_title": "OSFC driverapp",
+        "main_menu": {
+            "title": "Meny",
+            "screen": {
+                "home": "Hjem"
+            }
+        },
+        "error": {
+            "security": {
+                "allowed_app_user_role": "Gjeldende brukerrolle har ikke tillatelse til å bruke appen"
+            },
+            "warning": "Advarsel",
+            "invalid_phone_number": "Ugyldig telefonnummer"
+        },
+        "buttons": {
+            "send": "Sende",
+            "resend": "Send på nytt",
+            "logout": "Logg ut"
+        },
+        "phone_login": {
+            "buttons": {
+                "back_to_phone": "Tilbake til telefonredigering"
+            },
+            "fields": {
+                "verification_code": {
+                    "helper_text": {
+                        "countdown_on": "Neste forsøk etterpå",
+                        "countdown_off": "Hvis koden ikke har kommet, klikk"
+                    }
+                }
+            },
+            "error": {
+                "verification_error": "Bekreftelsesfeil"
+            }
+        }
+    }
+}

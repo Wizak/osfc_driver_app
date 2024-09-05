@@ -14,7 +14,7 @@ const HomeScreen = () => {
             >
                 <ScrollView contentContainerStyle={styles.container}>
                     <View>
-                        <Text>Hello</Text>
+                        <Text>Welcome</Text>
                     </View>
                 </ScrollView>
             </SafeAreaView>

@@ -29,6 +29,7 @@
         },
         "plugins": [
             "expo-secure-store",
+            "expo-localization",
             [
                 "expo-build-properties",
                 {
@@ -42,7 +43,8 @@
                 {
                     "initialOrientation": "DEFAULT"
                 }
-            ]
+            ],
+            "expo-localization"
         ]
     }
 }

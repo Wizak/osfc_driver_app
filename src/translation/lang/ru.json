@@ -1,0 +1,39 @@
+{
+    "app": {
+        "root_title": "Приложение драйвера OSFC",
+        "main_menu": {
+            "title": "Меню",
+            "screen": {
+                "home": "Дом"
+            }
+        },
+        "error": {
+            "security": {
+                "allowed_app_user_role": "Текущая роль пользователя не позволяет использовать приложение"
+            },
+            "warning": "Предупреждение",
+            "invalid_phone_number": "Неверный номер телефона"
+        },
+        "buttons": {
+            "send": "Отправлять",
+            "resend": "Отправить повторно",
+            "logout": "Выйти"
+        },
+        "phone_login": {
+            "buttons": {
+                "back_to_phone": "Вернуться к редактированию на телефоне"
+            },
+            "fields": {
+                "verification_code": {
+                    "helper_text": {
+                        "countdown_on": "Следующая попытка после",
+                        "countdown_off": "Если код не пришел, нажмите"
+                    }
+                }
+            },
+            "error": {
+                "verification_error": "Ошибка проверки"
+            }
+        }
+    }
+}

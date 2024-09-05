@@ -1,0 +1,39 @@
+{
+    "app": {
+        "root_title": "Applicazione driver OSFC",
+        "main_menu": {
+            "title": "Menu",
+            "screen": {
+                "home": "Casa"
+            }
+        },
+        "error": {
+            "security": {
+                "allowed_app_user_role": "Ruolo utente corrente non autorizzato a utilizzare l&#39;app"
+            },
+            "warning": "Avvertimento",
+            "invalid_phone_number": "Numero di telefono non valido"
+        },
+        "buttons": {
+            "send": "Inviare",
+            "resend": "Invia di nuovo",
+            "logout": "Esci"
+        },
+        "phone_login": {
+            "buttons": {
+                "back_to_phone": "Torna alla modifica del telefono"
+            },
+            "fields": {
+                "verification_code": {
+                    "helper_text": {
+                        "countdown_on": "Prossimo tentativo dopo",
+                        "countdown_off": "Se il codice non è arrivato, clicca"
+                    }
+                }
+            },
+            "error": {
+                "verification_error": "Errore di verifica"
+            }
+        }
+    }
+}

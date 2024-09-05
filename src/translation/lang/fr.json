@@ -1,0 +1,39 @@
+{
+    "app": {
+        "root_title": "Application de pilote OSFC",
+        "main_menu": {
+            "title": "Menu",
+            "screen": {
+                "home": "Maison"
+            }
+        },
+        "error": {
+            "security": {
+                "allowed_app_user_role": "Le rôle d&#39;utilisateur actuel n&#39;est pas autorisé à utiliser l&#39;application"
+            },
+            "warning": "Avertissement",
+            "invalid_phone_number": "Numéro de téléphone invalide"
+        },
+        "buttons": {
+            "send": "Envoyer",
+            "resend": "Renvoyer",
+            "logout": "Déconnexion"
+        },
+        "phone_login": {
+            "buttons": {
+                "back_to_phone": "Retour à l&#39;édition téléphonique"
+            },
+            "fields": {
+                "verification_code": {
+                    "helper_text": {
+                        "countdown_on": "Prochain essai après",
+                        "countdown_off": "Si le code n&#39;est pas arrivé, cliquez sur"
+                    }
+                }
+            },
+            "error": {
+                "verification_error": "Erreur de vérification"
+            }
+        }
+    }
+}

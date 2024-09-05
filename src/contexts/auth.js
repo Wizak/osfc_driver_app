@@ -10,7 +10,7 @@ import I18n from '../translation';
 
 const AuthContext = React.createContext();
 
-const AuthContextProvider = ({ children }) => {
+const AuthProvider = ({ children }) => {
     const [state, dispatch] = React.useReducer(AuthReducer, {
         isLoading: true,
         permissions: null,
@@ -64,7 +64,6 @@ const AuthContextProvider = ({ children }) => {
                             const tokenMatch = setCookieHeader.match(
                                 /Authorization=([^;]+)/
                             );
-                            console.log('tokenMatch', tokenMatch);
                             if (tokenMatch) {
                                 const token = tokenMatch[1];
                                 await SecureStore.setItemAsync('token', token);
@@ -84,7 +83,7 @@ const AuthContextProvider = ({ children }) => {
                     }
                 })
                 .catch((e) => {
-                    error = e?.message || 'Occured some error';
+                    error = e?.message || 'Unexpected Error';
                 })
                 .finally(() => {
                     dispatch({ type: AuthActions.SignIn, permissions, error });
@@ -122,4 +121,4 @@ const useAuth = () => {
 };
 
 export { useAuth };
-export default AuthContextProvider;
+export default AuthProvider;

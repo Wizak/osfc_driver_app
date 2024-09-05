@@ -1,0 +1,39 @@
+{
+    "app": {
+        "root_title": "Aplikacja sterownika OSFC",
+        "main_menu": {
+            "title": "Menu",
+            "screen": {
+                "home": "Dom"
+            }
+        },
+        "error": {
+            "security": {
+                "allowed_app_user_role": "Obecna rola użytkownika nie zezwala na korzystanie z aplikacji"
+            },
+            "warning": "Ostrzeżenie",
+            "invalid_phone_number": "Nieprawidłowy numer telefonu"
+        },
+        "buttons": {
+            "send": "Wysłać",
+            "resend": "Wyślij ponownie",
+            "logout": "Wyloguj"
+        },
+        "phone_login": {
+            "buttons": {
+                "back_to_phone": "Powrót do edycji telefonu"
+            },
+            "fields": {
+                "verification_code": {
+                    "helper_text": {
+                        "countdown_on": "Następna próba po",
+                        "countdown_off": "Jeżeli kod nie dotarł, kliknij"
+                    }
+                }
+            },
+            "error": {
+                "verification_error": "Błąd weryfikacji"
+            }
+        }
+    }
+}

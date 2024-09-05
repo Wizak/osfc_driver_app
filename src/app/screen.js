@@ -6,7 +6,6 @@ import AppMainDrawerContent from '../components/AppMainDrawer';
 import I18n from '../translation';
 
 import { HomeScreen } from '../screens';
-// import { useStore } from './contexts/store';
 
 const Drawer = createDrawerNavigator();
 
