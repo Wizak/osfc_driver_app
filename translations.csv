@@ -1,0 +1,7 @@
+key,en
+app.root_title,OSFC Driver App
+app.main_menu.title,Menu
+app.main_menu.screen.home,Home
+app.error.security.allowed_app_user_role,Current user role disallowed to use App
+app.phone_verification.send,Send
+app.buttons.logout,Logout

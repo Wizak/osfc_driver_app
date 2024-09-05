@@ -1,35 +1,36 @@
 import React, { memo } from 'react';
-import { StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import Background from '../../components/Background';
 import Logo from '../../components/Logo';
 import Header from '../../components/Header';
+import I18n from '../../translation';
 
 // import { OtpInput } from 'react-native-otp-entry';
 import PhoneLoginLayout from './PhoneLoginLayout';
 
 const SignInLayout = () => <PhoneLoginLayout />;
+
 const LoginScreen = () => {
     return (
         <Background extraStyle={styles.container}>
-            <Logo />
-            <Header>OSFC Employee App</Header>
+            <View style={styles.logo_container}>
+                <Logo />
+                <Header>{I18n.t('app.root_title')}</Header>
+            </View>
             <SignInLayout />
-            {/* <OtpInput
-                numberOfDigits={4}
-                focusColor="green"
-                focusStickBlinkingDuration={500}
-                onTextChange={(text) => console.log(text)}
-                onFilled={(text) => console.log(`OTP is ${text}`)}
-                textInputProps={{
-                    accessibilityLabel: 'One-Time Password',
-                }}
-            /> */}
         </Background>
     );
 };
 
 const styles = StyleSheet.create({
+    logo_container: {
+        marginTop: 50,
+        marginBottom: 100,
+        alignSelf: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     text: {
         color: 'white',
     },

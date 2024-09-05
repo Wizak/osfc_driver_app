@@ -3,14 +3,18 @@ import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { Drawer as PaperDrawer } from 'react-native-paper';
 
 import Constants from 'expo-constants';
+import I18n from '../translation';
 
 const MenuDrawerContent = (props) => {
     const [activeScreen, setActiveScreen] = React.useState('Home');
 
     return (
-        <PaperDrawer.Section title="Menu" style={styles.menu}>
+        <PaperDrawer.Section
+            title={I18n.t('app.main_menu.title')}
+            style={styles.menu}
+        >
             <PaperDrawer.Item
-                label="Home"
+                label={I18n.t('app.main_menu.screen.home')}
                 active={activeScreen === 'Home'}
                 icon="account-box"
                 onPress={() => {
@@ -27,6 +31,7 @@ const AppMainSideMenuContent = (props) => (
         <SafeAreaView forceInset={styles.safeArea}>
             <MenuDrawerContent {...props} />
         </SafeAreaView>
+        <LogoutButton {...props} />
     </ScrollView>
 );
 

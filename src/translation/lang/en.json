@@ -1,0 +1,19 @@
+{
+    "app": {
+        "root_title": "OSFC Driver App",
+        "main_menu": {
+            "title": "Menu",
+            "screen": {
+                "home": "Home"
+            }
+        },
+        "error": {
+            "security": {
+                "allowed_app_user_role": "Current user role disallowed to use App"
+            }
+        },
+        "phone_verification": {
+            "send": "Send"
+        }
+    }
+}

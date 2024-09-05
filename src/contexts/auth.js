@@ -5,7 +5,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { AuthReducer, AuthActions } from './reducers/auth';
 import { httpClient } from '../httpClient';
-import { AllowedRolesToUseApp } from '../constants/constants';
+import { OSFC_API_URL, AllowedRolesToUseApp } from '../constants/constants';
+import I18n from '../translation';
 
 const AuthContext = React.createContext();
 
@@ -26,7 +27,7 @@ const AuthContextProvider = ({ children }) => {
                     await AsyncStorage.getItem('permissions')
                 );
             } catch (e) {
-                error = 'Restore permissions Erorr';
+                throw new Error('Restore permissions Error');
             }
 
             dispatch({
@@ -40,34 +41,50 @@ const AuthContextProvider = ({ children }) => {
     }, []);
 
     const authContextValue = {
-        signIn: async ({ apiUrl, ...body }) => {
+        signIn: async ({ apiUrl = OSFC_API_URL, ...body }) => {
             let permissions;
             let error;
 
             dispatch({ type: AuthActions.Loading });
 
-            await httpClient(`${apiUrl}/login`, {
+            await httpClient(`${apiUrl}/login/code`, {
                 method: 'POST',
                 body: JSON.stringify(body),
             })
-                .then(async ({ json }) => {
+                .then(async ({ headers, json }) => {
                     if (!AllowedRolesToUseApp.includes(json.permissions.role)) {
-                        error = 'Only OSFC is allowed to login';
+                        error = I18n.t(
+                            'app.error.security.allowed_app_user_role'
+                        );
                         return;
                     }
                     try {
-                        await SecureStore.setItemAsync('token', json.token);
+                        const setCookieHeader = headers.get('Set-Cookie');
+                        if (setCookieHeader) {
+                            const tokenMatch = setCookieHeader.match(
+                                /Authorization=([^;]+)/
+                            );
+                            console.log('tokenMatch', tokenMatch);
+                            if (tokenMatch) {
+                                const token = tokenMatch[1];
+                                await SecureStore.setItemAsync('token', token);
+                            }
+                        }
+                    } catch (e) {
+                        throw new Error('Set Authorization Error');
+                    }
+                    try {
                         await AsyncStorage.setItem(
                             'permissions',
                             JSON.stringify(json.permissions)
                         );
                         permissions = json.permissions;
                     } catch (e) {
-                        error = 'Set permissions Erorr';
+                        throw new Error('Set permissions Error');
                     }
                 })
                 .catch((e) => {
-                    error = e?.message;
+                    error = e?.message || 'Occured some error';
                 })
                 .finally(() => {
                     dispatch({ type: AuthActions.SignIn, permissions, error });
@@ -75,8 +92,12 @@ const AuthContextProvider = ({ children }) => {
         },
         signOut: async () => {
             dispatch({ type: AuthActions.Loading });
-            await SecureStore.deleteItemAsync('token');
-            await AsyncStorage.removeItem('permissions');
+            try {
+                await SecureStore.deleteItemAsync('token');
+                await AsyncStorage.removeItem('permissions');
+            } catch (e) {
+                throw new Error('Reset storage Error');
+            }
             dispatch({ type: AuthActions.SignOut });
         },
         getState: () => state,

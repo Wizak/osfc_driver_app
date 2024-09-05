@@ -3,6 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import SecureNavigation from '../controllers/SecureNavigation';
 import AppMainDrawerContent from '../components/AppMainDrawer';
+import I18n from '../translation';
 
 import { HomeScreen } from '../screens';
 // import { useStore } from './contexts/store';
@@ -23,7 +24,7 @@ const SecuredNavigationAppScreen = () => (
     <SecureNavigation
         component={AppScreen}
         name="AppMain"
-        options={{ title: 'OSFC Driver App' }}
+        options={{ title: I18n.t('app.root_title') }}
     />
 );
 

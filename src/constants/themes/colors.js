@@ -48,6 +48,7 @@ const COLORS = {
         surfaceDisabled: 'rgba(29, 27, 30, 0.12)',
         onSurfaceDisabled: 'rgba(29, 27, 30, 0.38)',
         backdrop: 'rgba(51, 47, 55, 0.4)',
+        default_text: 'rgba(0, 0, 0, 1)',
     },
     dark: {
         primary: 'rgb(220, 184, 255)',
@@ -90,6 +91,7 @@ const COLORS = {
         surfaceDisabled: 'rgba(231, 225, 229, 0.12)',
         onSurfaceDisabled: 'rgba(231, 225, 229, 0.38)',
         backdrop: 'rgba(51, 47, 55, 0.4)',
+        default_text: 'rgba(255, 255, 255, 1)',
     },
 };
 
