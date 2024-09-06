@@ -6,12 +6,14 @@ This script translates specified columns in a CSV file using the Google Cloud Tr
 
 1. **Google Cloud Project**: You must have a Google Cloud project with the Translation API enabled.
 2. **Service Account Key**: A JSON file for a service account that has access to the Translation API.
-3. **Python Dependencies**: This script requires Python and the `google-cloud-translate` library.
+3. **Python**: This script requires Python and the `google-cloud-translate` library.
+4. **Python Dependencies**: This script requires Python and the `google-cloud-translate` library.
 
 ## Installation
 
 ### 1. Set up Python environment
 
+Install python >= 3.8 and create venv.
 It's recommended to create a virtual environment:
 
 ```bash
@@ -25,7 +27,7 @@ venv\Scripts\activate      # For Windows
 Run the following command to install the necessary Python packages:
 
 ```bash
-pip install google-cloud-translate
+pip install -r requirements.txt
 ```
 
 ### 3. Enable Google Cloud Translation API
@@ -38,7 +40,7 @@ Make sure you have the Google Cloud Translation API enabled in your project:
 
 ### 4. Add your service account key
 
-Save the service account key JSON file in the path specified in the script (`./scripts/key.json` by default). You can change this path as needed.
+Save the service account key JSON file in the path specified in the script (`key.json` by default). You can change this path as needed.
 
 ## How to Use
 
@@ -48,7 +50,7 @@ Save the service account key JSON file in the path specified in the script (`./s
     - The column that contains the source text (e.g., `en` for English) should be the key for translations.
     - Additional columns where the translations will be written (e.g., `fr` for French, `de` for German, etc.) should be present in the CSV.
 
-    Example CSV file (`dictionary.csv`):
+    Example CSV file (`../../translations/dictionary.csv`):
 
     ```
     key, en, fr, de, es
@@ -65,7 +67,7 @@ Save the service account key JSON file in the path specified in the script (`./s
    The script automatically backs up your input CSV file, translates text in the specified columns, and saves the translated text in the output CSV.
 
     ```bash
-    python ./scripts/translate_csv/main.py
+    python main.py
     ```
 
 4. **Output**:

@@ -36,7 +36,7 @@
             },
             "text": {
                 "phone_login_title": "Brug telefonnummer til at logge ind",
-                "otp_title": "Indtast den modtagne bekræftelseskode"
+                "otp_title": "Indtast modtaget bekræftelseskode"
             }
         }
     }

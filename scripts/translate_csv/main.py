@@ -42,11 +42,11 @@ def translate_columns(input_file, output_file, key_file):
 
 
 if __name__ == "__main__":
-    input_file = "./translations/dictionary.csv"  # Replace with your input CSV file path
-    output_file = "./translations/dictionary.csv"  # Replace with your desired output file path
+    input_file = "../../translations/dictionary.csv"  # Replace with your input CSV file path
+    output_file = "../../translations/dictionary.csv"  # Replace with your desired output file path
 
-    backup_file = "./translations/dictionary.backup.csv"  # Replace with your input CSV file path
-    key_file = "./scripts/translate_csv/key.json"  # Replace with your Google Cloud service account key file
+    backup_file = "../../translations/dictionary.backup.csv"  # Replace with your input CSV file path
+    key_file = "./key.json"  # Replace with your Google Cloud service account key file
 
     shutil.copy(input_file, backup_file)
     translate_columns(input_file, output_file, key_file)

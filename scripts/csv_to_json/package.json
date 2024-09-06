@@ -1,0 +1,18 @@
+{
+    "name": "csv_to_json",
+    "version": "1.0.0",
+    "description": "This project provides a Node.js script that reads a CSV file of translations and converts it into JSON format, one file per language. The resulting JSON files are saved into the `src/translation/lang/` directory.",
+    "main": "main.js",
+    "scripts": {
+        "start": "node main.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "csv-parser": "^3.0.0",
+        "fs": "^0.0.1-security",
+        "lodash": "^4.17.21"
+    }
+}

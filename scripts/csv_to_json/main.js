@@ -2,7 +2,7 @@ const csv = require('csv-parser');
 const fs = require('fs');
 const _ = require('lodash');
 
-const DICTIONARY_CSV_PATH = './translations/dictionary.csv';
+const DICTIONARY_CSV_PATH = '../../translations/dictionary.csv';
 
 const csvToJson = () => {
     const result = {};
@@ -19,7 +19,7 @@ const csvToJson = () => {
         .on('end', () => {
             for (let lang in result) {
                 const js = JSON.stringify(result[lang], null, 4);
-                fs.writeFileSync(`src/translation/lang/${lang}.json`, js);
+                fs.writeFileSync(`../../src/translation/lang/${lang}.json`, js);
             }
         });
 };
