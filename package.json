@@ -6,8 +6,7 @@
         "start": "expo start",
         "android": "expo start --android",
         "ios": "expo start --ios",
-        "web": "expo start --web",
-        "translation": "node ./scripts/csv_to_json.js"
+        "web": "expo start --web"
     },
     "dependencies": {
         "@react-native-async-storage/async-storage": "^2.0.0",
@@ -35,10 +34,7 @@
         "react-native-screens": "3.31.1"
     },
     "devDependencies": {
-        "@babel/core": "^7.20.0",
-        "csv-parser": "^3.0.0",
-        "fs": "^0.0.1-security",
-        "lodash": "^4.17.21"
+        "@babel/core": "^7.20.0"
     },
     "private": true
 }

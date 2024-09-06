@@ -9,7 +9,7 @@
         },
         "error": {
             "security": {
-                "allowed_app_user_role": "Aktuelle Benutzerrolle erlaubt keine Nutzung der App"
+                "allowed_app_user_role": "Der aktuellen Benutzerrolle ist die Nutzung der App nicht gestattet"
             },
             "warning": "Warnung",
             "invalid_phone_number": "Ungültige Telefonnummer"
@@ -33,6 +33,10 @@
             },
             "error": {
                 "verification_error": "Überprüfungsfehler"
+            },
+            "text": {
+                "phone_login_title": "Verwenden Sie die Telefonnummer zum Anmelden",
+                "otp_title": "Geben Sie den erhaltenen Bestätigungscode ein"
             }
         }
     }

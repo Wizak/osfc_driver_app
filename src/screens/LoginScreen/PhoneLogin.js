@@ -1,9 +1,13 @@
 import React, { memo, useState, useRef, useEffect, useCallback } from 'react';
-import { SafeAreaView } from 'react-native';
+
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 import PhoneInput from 'react-native-phone-number-input';
 import { OtpInput } from 'react-native-otp-entry';
 import { useAlerts } from 'react-native-paper-alerts';
 import { HelperText, Text } from 'react-native-paper';
+
+import { useLocales } from 'expo-localization';
+
 import Button from '../../components/Button';
 import I18n from '../../translation';
 
@@ -12,7 +16,6 @@ import { httpClient } from '../../httpClient';
 import { OSFC_API_URL } from '../../constants/constants';
 import { useAuth } from '../../contexts/auth';
 import { useTheme } from '../../hooks';
-import { useLocales } from 'expo-localization';
 
 const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
@@ -23,7 +26,7 @@ const formatTime = (time) => {
     )}`;
 };
 
-const initialTimer = 10;
+const initialTimer = 60;
 
 const PhoneLogin = () => {
     const userDeviceLocales = useLocales();
@@ -132,7 +135,10 @@ const PhoneLogin = () => {
     return (
         <SafeAreaView>
             {!isOTPReading ? (
-                <>
+                <View style={styles.container}>
+                    <Text style={styles.subtitle}>
+                        {I18n.t('app.phone_login.text.phone_login_title')}
+                    </Text>
                     <PhoneInput
                         ref={phoneInput}
                         defaultValue={phone}
@@ -144,12 +150,19 @@ const PhoneLogin = () => {
                         withShadow
                         autoFocus
                     />
-                    <Button mode="contained" onPress={handleOnSend}>
+                    <Button
+                        style={styles.button}
+                        mode="contained"
+                        onPress={handleOnSend}
+                    >
                         {I18n.t('app.buttons.send')}
                     </Button>
-                </>
+                </View>
             ) : (
-                <>
+                <View style={styles.container}>
+                    <Text style={styles.subtitle}>
+                        {I18n.t('app.phone_login.text.otp_title')}
+                    </Text>
                     <OtpInput
                         ref={otpInput}
                         numberOfDigits={4}
@@ -184,15 +197,34 @@ const PhoneLogin = () => {
                         </HelperText>
                     )}
                     <Button
-                        style={{ marginBottom: 10, marginTop: 50 }}
+                        style={styles.button}
                         onPress={handleOnBackToPhone}
+                        mode="contained"
                     >
                         {I18n.t('app.phone_login.buttons.back_to_phone')}
                     </Button>
-                </>
+                </View>
             )}
         </SafeAreaView>
     );
 };
+
+const styles = StyleSheet.create({
+    button: {
+        marginBottom: 10,
+        marginTop: 50,
+    },
+    subtitle: {
+        fontSize: 20,
+        fontWeight: 700,
+        marginBottom: 30,
+        color: '#666',
+    },
+    container: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 5,
+    },
+});
 
 export default memo(PhoneLogin);

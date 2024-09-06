@@ -65,7 +65,7 @@ Save the service account key JSON file in the path specified in the script (`./s
    The script automatically backs up your input CSV file, translates text in the specified columns, and saves the translated text in the output CSV.
 
     ```bash
-    python translate_csv.py
+    python ./scripts/translate_csv/main.py
     ```
 
 4. **Output**:

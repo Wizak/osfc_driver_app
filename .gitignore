@@ -36,3 +36,6 @@ yarn-error.*
 
 # secrets
 **key**
+
+# backups
+**backup**

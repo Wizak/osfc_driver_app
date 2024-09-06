@@ -46,7 +46,7 @@ if __name__ == "__main__":
     output_file = "./translations/dictionary.csv"  # Replace with your desired output file path
 
     backup_file = "./translations/dictionary.backup.csv"  # Replace with your input CSV file path
-    key_file = "./scripts/key.json"  # Replace with your Google Cloud service account key file
+    key_file = "./scripts/translate_csv/key.json"  # Replace with your Google Cloud service account key file
 
     shutil.copy(input_file, backup_file)
     translate_columns(input_file, output_file, key_file)

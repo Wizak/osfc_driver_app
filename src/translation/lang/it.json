@@ -33,6 +33,10 @@
             },
             "error": {
                 "verification_error": "Errore di verifica"
+            },
+            "text": {
+                "phone_login_title": "Usa il numero di telefono per accedere",
+                "otp_title": "Inserisci il codice di verifica ricevuto"
             }
         }
     }

@@ -33,6 +33,10 @@
             },
             "error": {
                 "verification_error": "Bekreftelsesfeil"
+            },
+            "text": {
+                "phone_login_title": "Bruk telefonnummer for å logge på",
+                "otp_title": "Skriv inn mottatt bekreftelseskode"
             }
         }
     }

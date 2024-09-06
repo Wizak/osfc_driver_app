@@ -33,6 +33,10 @@
             },
             "error": {
                 "verification_error": "Błąd weryfikacji"
+            },
+            "text": {
+                "phone_login_title": "Użyj numeru telefonu, aby się zalogować",
+                "otp_title": "Wprowadź otrzymany kod weryfikacyjny"
             }
         }
     }

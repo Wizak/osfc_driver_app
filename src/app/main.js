@@ -18,14 +18,24 @@ import I18n from '../translation';
 import { useTheme } from '../hooks';
 import { Locales } from '../constants/enums';
 import { useLocales } from 'expo-localization';
+import { ColorScheme } from '../constants/enums';
 
 const AppMain = () => {
     const { colorScheme, colorTheme } = useTheme();
     const userDeviceLocales = useLocales();
+    const [statusBarStyle, setStatusBarStyle] = React.useState();
 
     I18n.locale =
         Locales[userDeviceLocales[userDeviceLocales.length - 1].languageCode] ||
         Locales.en;
+
+    React.useEffect(() => {
+        setStatusBarStyle(
+            ColorScheme[colorScheme] == ColorScheme.light
+                ? ColorScheme.dark
+                : ColorScheme.light
+        );
+    }, [colorScheme]);
 
     return (
         <StoreProvider>
@@ -39,7 +49,7 @@ const AppMain = () => {
                         </NavigationContainer>
                         <StatusBar
                             hidden={false}
-                            style={colorScheme}
+                            style={statusBarStyle}
                             translucent={true}
                         />
                     </PaperProvider>

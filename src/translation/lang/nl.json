@@ -33,6 +33,10 @@
             },
             "error": {
                 "verification_error": "Verificatiefout"
+            },
+            "text": {
+                "phone_login_title": "Gebruik telefoonnummer om in te loggen",
+                "otp_title": "Voer de ontvangen verificatiecode in"
             }
         }
     }

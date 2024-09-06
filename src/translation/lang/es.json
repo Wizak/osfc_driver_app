@@ -33,6 +33,10 @@
             },
             "error": {
                 "verification_error": "Error de verificación"
+            },
+            "text": {
+                "phone_login_title": "Utilice el número de teléfono para iniciar sesión",
+                "otp_title": "Introduzca el código de verificación recibido"
             }
         }
     }
