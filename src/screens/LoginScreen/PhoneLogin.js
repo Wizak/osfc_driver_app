@@ -147,8 +147,16 @@ const PhoneLogin = () => {
                         onChangeText={setPhone}
                         onChangeFormattedText={handleOnChangeFormattedText}
                         withDarkTheme={colorScheme == ColorScheme.dark}
+                        placeholder=" "
                         withShadow
                         autoFocus
+                        textInputProps={{
+                            selectionColor:
+                                styles.phone.selectionColor(colorTheme),
+                            onCahnged: (value) => value.replace(/[^0-9]/g, ''),
+                            maxLength: 11,
+                        }}
+                        {...styles.phoneTheme(colorTheme)}
                     />
                     <Button
                         style={styles.button}
@@ -166,12 +174,14 @@ const PhoneLogin = () => {
                     <OtpInput
                         ref={otpInput}
                         numberOfDigits={4}
+                        type="numeric"
                         focusColor="green"
                         focusStickBlinkingDuration={1000}
                         onFilled={handleOnCodeFilled}
                         textInputProps={{
                             accessibilityLabel: 'One-Time Password',
                         }}
+                        theme={styles.otpTheme(colorTheme)}
                     />
                     {timer > 0 ? (
                         <HelperText type="info" visible>
@@ -200,6 +210,7 @@ const PhoneLogin = () => {
                         style={styles.button}
                         onPress={handleOnBackToPhone}
                         mode="contained"
+                        disabled={!!timer}
                     >
                         {I18n.t('app.phone_login.buttons.back_to_phone')}
                     </Button>
@@ -210,6 +221,36 @@ const PhoneLogin = () => {
 };
 
 const styles = StyleSheet.create({
+    otpTheme: (theme) => ({
+        pinCodeTextStyle: {
+            color: theme.colors.primary,
+        },
+    }),
+    phoneTheme: (theme) => ({
+        flagButtonStyle: {
+            backgroundColor: theme.colors.secondary,
+            borderTopLeftRadius: 20,
+            borderBottomLeftRadius: 20,
+        },
+        textContainerStyle: {
+            backgroundColor: theme.colors.onSecondaryContainer,
+            borderTopRightRadius: 20,
+            borderBottomRightRadius: 20,
+        },
+        containerStyle: {
+            backgroundColor: 'transparent',
+        },
+        codeTextStyle: {
+            color: theme.colors.secondaryContainer,
+            fontWeight: 900,
+        },
+        textInputStyle: {
+            color: theme.colors.onSecondary,
+        },
+    }),
+    phone: {
+        selectionColor: (theme) => theme.colors.secondaryContainer,
+    },
     button: {
         marginBottom: 10,
         marginTop: 50,
